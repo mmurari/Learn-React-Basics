@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <title>
+      React Application - Simple Note
+    </title>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css"></link>
+  </head>
+  <body>
+    <div id="react-container"></div>
+    <script type="text/babel">
+
+      var Note = function(props){
+        return (
+          <div className="note">
+            <p>
+              {props.children}
+            </p>
+            <span>
+              <button onClick={edit}>EDIT</button>
+              <button onClick={remove}>X</button>
+            </span>
+          </div>
+        );
+      }
+
+      var edit = function(){
+        alert('Edit is clicked!!')
+      }
+
+      var remove = function(){
+        alert('Remove is clicked!!')
+      }
+
+      ReactDOM.render(
+          <Note>
+            Hello World!!
+          </Note>,
+        document.getElementById("react-container")
+      )
+
+    </script>
+  </body>
+</html>
